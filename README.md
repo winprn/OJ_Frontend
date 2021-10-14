@@ -8,4 +8,6 @@ Go to ```addon/templates/``` and find the .html has that ``<component>`` in it's
 ## If you want to modify the translation
 Go to ```addon/locales/``` and open the .yaml file you want to change.
 
+anh meo t dau?
+
 **Make sure to follow the format**
