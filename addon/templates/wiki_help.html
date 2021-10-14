@@ -33,13 +33,13 @@
     <h1 class="section__title" id="limits" data-heading>{{ _('Limitations') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>{{ name }} By default, each problem has TL of 1s and ML of 256MB</p>
-    <p>{{ name }} For some problems, authors can change the TL & ML to fit their wish</p>
+    <p>In {I{ name }} by default, each problem has Time Limit of 1s and Memory Limitt of 256MB</p>
+    <p>In {{ name }} for some problems, authors can change the Time Limit & Memory Limit to fit their statement</p>
   </div>
 </div>
 <div class="section" data-heading-extract-to="#menu-item-wiki_help">
   <div class="section__header">
-    <h1 class="section__title" id="io" data-heading>{{ _('IO') }}</h1>
+    <h1 class="section__title" id="io" data-heading>{{ _('Input/Output') }}</h1>
   </div>
   <div class="section__body typo">
     <p>Unless specified, {{ name }} use standard I/O for input and output  </p>
@@ -57,8 +57,8 @@
       <li><span class="record-status--text progress">Judging</span> Your submission is being judged</li>
       <li><span class="record-status--text pass">Accepted</span> Your code passed all the tests</li>
       <li><span class="record-status--text fail">Wrong Answer</span> Your code's output is not correct</li>
-      <li><span class="record-status--text fail">Time Limit Exceeded</span> Your code doesn't fit the TL</li>
-      <li><span class="record-status--text fail">Memory Limit Exceeded</span> Your code doesn't fit the ML</li>
+      <li><span class="record-status--text fail">Time Limit Exceeded</span> Your code doesn't fit the Time Limit</li>
+      <li><span class="record-status--text fail">Memory Limit Exceeded</span> Your code doesn't fit the Memory Limit</li>
       <li><span class="record-status--text fail">Runtime Error</span> Your code return a value different from 0 (array bounds, divide by zero,...)</li>
       <li><span class="record-status--text fail">Compile Error</span> Your code couldn't compile</li>
       <li><span class="record-status--text fail">System Error</span> Something is wrong with the judger/server (please let us know by posting a blog/asking a question)</li>
@@ -66,59 +66,59 @@
       <li><span class="record-status--text fail">Unknown Error</span> Strange things happened</li>
       <li><span class="record-status--text ignored">Ignored</span> Your submission was ignored</li>
     </ul>
-    <blockquote class="note">If your submission got canceled/ignored, probably the admin had found out that there's another submission has the same code like yours</blockquote>
+    <blockquote class="note">If your submission got canceled/ignored, probably the admin had found out that there's another submission has the same code like yours.</blockquote>
   </div>
 </div>
-<!-- <div class="section" data-heading-extract-to="#menu-item-wiki_help">
+<div class="section" data-heading-extract-to="#menu-item-wiki_help">
   <div class="section__header">
     <h1 class="section__title" id="ce" data-heading>{{ _('Compile Error') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>可能有以下情况：</p>
+    <p>There may be the following situations:</p>
     <blockquote><ul>
-    <li>1. 递交时选错了编程语言</li>
-    <li>2. Java 的主类名没有使用 "Main"</li>
-    <li>3. 对于 C/C++：见下</li>
-    <li>4. 一般性的编译错误</li>
+    <li>1. Submitting code but selected wrong language.</li>
+    <li>2. Java main class name does not use "Main".</li>
+    <li>3. For C/C++, check below.</li>
+    <li>4. General compilation errors.</li>
     </ul></blockquote>
     
     <blockquote class="warn">
-      <p>对 C/C++ 选手的特别提醒：</p>
+      <p>For C/C++ users：</p>
       <ul>
-      <li>1. __int64 在 GNU C++ 中应写成 long long 类型</li>
-      <li>2. main() 返回值必须定义为 int ，而不是 void</li>
-      <li>3. for 语句中的指标变量 i 将会在如"for (int i = 0...) {...}"语句之后变为无效</li>
-      <li>4. itoa 不是一个通用 ANSI 函数（标准 C/C++ 中无此函数）</li>
-      <li>5. printf 中使用 %lf 格式是不正确的</li>
+      <li>1. '__int64' should be written as 'long long' in GNU C++</li>
+      <li>2. main() function should return 'int' instead of 'void'</li>
+      <li>3. The variable i in the statement isn't a global variable, it'll become invalid after a new definement such as 'for(int i = 0...) {...}'.</li>
+      <li>4. itoa() is not a general ANSI function （and there is no function in standard C/C++）</li>
+      <li>5. %lf format in printf() isn't available and should be %f or %g</li>
       </ul>
     </blockquote>
   </div>
-</div> -->
-<!-- <div class="section" data-heading-extract-to="#menu-item-wiki_help">
+</div>
+<div class="section" data-heading-extract-to="#menu-item-wiki_help">
   <div class="section__header">
     <h1 class="section__title" id="training" data-heading>{{ _('Training') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>我们精心挑选了一些题目组成了训练计划。单击导航栏的“训练”即可进入！</p>
+    <p>We've carefully selected some topics to form a training plan. Click "Training" in the navigation bar to enter！</p>
   </div>
-</div> -->
+</div>
 <div class="section" data-heading-extract-to="#menu-item-wiki_help">
   <div class="section__header">
     <h1 class="section__title" id="contest" data-heading>{{ _('Contest') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>In OI mode, the last submission will be counted as the result.</p>
-    <p>In OI mode, highest total score is ranked first. Same score will be same rank.</p>
-    <p>In ACM/ICPC mode, passed code will be counted as the result.</p>
+    <p>In OI, the last submission will be counted as the result.</p>
+    <p>In OI, highest total score is ranked first. Same score will be same rank.</p>
+    <p>In ACM/ICPC, passed code will be counted as the result.</p>
     <p>In ACM/ICPC, the highest total number of problems solved is ranked first. If they're same, penalty will decide.</p>
   </div>
 </div>
-<!-- <div class="section" data-heading-extract-to="#menu-item-wiki_help">
+<div class="section" data-heading-extract-to="#menu-item-wiki_help">
   <div class="section__header">
     <h1 class="section__title" id="acratio" data-heading>{{ _('Accepted Ratio') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>通过率的影响极其恶劣，{{ name }} 不提供也不承认通过率。</p>
+    <p>Due to the pass rate is extremely low so {{ name }} does not provide the pass rate.</p>
   </div>
 </div>
 <div class="section" data-heading-extract-to="#menu-item-wiki_help">
@@ -126,24 +126,24 @@
     <h1 class="section__title" id="rp" data-heading>{{ _('RP Algorithm') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>RP 可由题目，活动，比赛等获得。</p>
+    <p>RP can be obtained from topics, activities, competitions, etc.</p>
   </div>
-</div> -->
-<!-- <div class="section" data-heading-extract-to="#menu-item-wiki_help">
+</div>
+<div class="section" data-heading-extract-to="#menu-item-wiki_help">
   <div class="section__header">
     <h1 class="section__title" id="pbmdiff" data-heading>{{ _('Difficulty Algorithm') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>{{ name }} 中题目的难度，根据递交数、通过率以及每个递交的递交时间和评测结果，通过算法计算得出。</p>
-    <p>因此，请注意以下几点：</p>
+    <p>The difficulty of a problem in {{ name }} is calculated base on number of submissions, pass rate and the submission running time and results of each submission.</p>
+    <p>Therefore, please note the following：</p>
     <ul>
-    <li>0. 一般地，难度的数值越大，该题目越难。</li>
-    <li>1. 新题目的难度可能不准确；在题目获得大量递交之后，难度才会变得较为准确。</li>
-    <li>2. 越早递交评测的用户代码的评测结果对题目难度影响越大。</li>
-    <li>3. 题目的难度由算法计算得出，有可能出现不准确的结果。</li>
+    <li>0. The greater the difficulty value, the harder the problem is.</li>
+    <li>1. Some easy problems difficulty may be inaccurate; The problem difficulty will become more accurate if and only if a large number of submissions has been made.</li>
+    <li>2. The earlier the evaluation result of the user code submitted, the greater the impact on the difficulty of the topic.</li>
+    <li>3. The difficulty also based on algorithm so there may be inaccurate results.</li>
     </ul>
   </div>
-</div> -->
+</div>
 <!-- <div class="section" data-heading-extract-to="#menu-item-wiki_help">
   <div class="section__header">
     <h1 class="section__title" id="upload" data-heading>{{ _('Dataset Format') }}</h1>
@@ -152,13 +152,13 @@
     <p>详见<a href="https://hydro.js.org/docs/testdata.html">配置文档</a></p>
   </div>
 </div> -->
-<!-- <div class="section" data-heading-extract-to="#menu-item-wiki_help">
+<div class="section" data-heading-extract-to="#menu-item-wiki_help">
   <div class="section__header">
     <h1 class="section__title" id="lostpass" data-heading>{{ _('Forgot Password and/or Username') }}</h1>
   </div>
   <div class="section__body typo">
-    <p>如果您无法登录，请仔细想想，是不是用户名记错了。比如，自己原本想要注册的用户名已经被注册，所以使用了一个带有前和/或后缀的用户名。</p>
-    <p>如果您确信您的账号被盗或者忘记了账号和/或密码，请及时<a href="{{ url('user_lostpass') }}">{{ _('Reset Password or Find Username') }}</a>。</p>
+    <p>If you are unable to log in, please think carefully whether you have remembered your username or your password incorrectly before using Reset Password or Find Username.</p>
+    <p>If you believe that your account has been stolen or you have forgotten your account and/or password, please <a href="{{ url('user_lostpass') }}">{{ _('Reset Password or Find Username') }}</a>。</p>
   </div>
-</div> -->
+</div>
 {% endblock %}
