@@ -43,12 +43,12 @@
     {% endfor %}
   </div>
   <div class="large-3 columns">
-    <div class="section side nojs--hide">
+    <!-- <div class="section side nojs--hide">
       <div class="section__header">
         <h1 class="section__title">{{ _('Hitokoto') }}</h1>
       </div>
       <div class="section__body typo" name="hitokoto"></div>
-    </div>
+    </div> -->
     {% if handler.user.hasPerm(perm.PERM_VIEW_DISCUSSION) %}
       {% include 'partials/discussion_nodes_widget.html' %}
     {% endif %}
@@ -57,7 +57,7 @@
         <h1 class="section__title">{{ _('Recommended') }}</h1>
       </div>
       <div class="section__body"><ul class="group-list">
-        <li class="group-list__item">
+        <!-- <li class="group-list__item">
           <h2 class="section__title">{{ _('Chinese') }}</h2>
           <ol class="chip-list">
             <li class="chip-list__item"><a class="typo-a" href="https://www.51nod.com/" target="_blank">51Nod</a></li>
@@ -71,7 +71,7 @@
             <li class="chip-list__item"><a class="typo-a" href="https://vijos.org/" target="_blank">Vijos</a></li>
             <li class="chip-list__item"><a class="typo-a" href="https://zoj.pintia.cn/" target="_blank">ZOJ</a></li>
           </ol>
-        </li>
+        </li> -->
         <li class="group-list__item">
           <h2 class="section__title">{{ _('English') }}</h2>
           <ol class="chip-list">
