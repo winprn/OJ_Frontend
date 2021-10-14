@@ -1,0 +1,100 @@
+{% set no_path_section = true %}
+{% extends "layout/basic.html" %}
+{% block content %}
+<script>
+{{ set(UiContext, {
+  problemId: pdoc.pid|default(pdoc.docId),
+  problemNumId: pdoc.docId,
+  codeLang: handler.user.codeLang,
+  codeTemplate: handler.user.codeTemplate,
+  pdoc: pdoc
+}) }}
+{% if tdoc %}
+  {{ set(UiContext, 'canViewRecord', model.contest.canShowSelfRecord.call(handler, tdoc)) }}
+  {{ set(UiContext, 'postSubmitUrl', url('contest_detail_problem_submit' if tdoc.docType == model.document.TYPE_CONTEST else 'homework_detail_problem_submit', pid=pdoc.pid, tid=tdoc.docId)) }}
+  {{ set(UiContext, 'getSubmissionsUrl', url('record_main', query={fullStatus:'true', pid:pdoc.pid, tid:tdoc.docId})) }}
+  {{ set(UiContext, 'getRecordDetailUrl', url('record_detail', rid='{rid}', query={tid:tdoc.docId})) }}
+  {{ set(UiContext, 'pretestConnUrl', "/record-conn?pretest=1&uidOrName=" + handler.user._id + "&pid=" + pdoc.docId + "&domainId=" + handler.domainId + "&tid=" + tdoc.docId) }}
+  {{ set(UiContext, 'tdoc', tdoc) }}
+{% else %}
+  {{ set(UiContext, 'canViewRecord', true) }}
+  {{ set(UiContext, 'postSubmitUrl', url('problem_submit', pid=pdoc.docId)) }}
+  {{ set(UiContext, 'getSubmissionsUrl', url('record_main', query={fullStatus:'true', pid:pdoc.docId})) }}
+  {{ set(UiContext, 'getRecordDetailUrl', url('record_detail', rid='{rid}')) }}
+  {{ set(UiContext, 'pretestConnUrl', "/record-conn?pretest=1&uidOrName=" + handler.user._id + "&pid=" + pdoc.docId + "&domainId=" + handler.domainId) }}
+{% endif %}
+</script>
+<div class="row">
+  <div class="medium-9 columns">
+    <div class="section">
+      <div class="section__header" style="align: center">
+        <h1 class="section__title">
+          {% if rdoc %}
+            <a href="{{ url('record_detail', {rid:rdoc._id}) }}">
+              <span class="icon record-status--icon {{ model.builtin.STATUS_CODES[rdoc['status']] }}"></span>
+              <span class="record-status--text {{ model.builtin.STATUS_CODES[rdoc['status']] }}">{{ rdoc.score }}</span>
+            </a>
+          {% endif %}
+          #{{ pdoc.pid|default(pdoc.docId) }}. {{ pdoc.title }}
+        </h1>
+      </div>
+      <div class="section__body">
+        <ul class="problem__tags">
+          <span class="bp3-tag bp3-large bp3-minimal problem__tag-item">{{ _('ID') }}: {{ pdoc.docId }}</span>
+          <span class="bp3-tag bp3-large bp3-minimal problem__tag-item bp3-icon-standard bp3-icon-book">{{ _('problem_type.' + pdoc.config.type).format(pdoc.config.subType) }}</span>
+          {% if pdoc.config.type != 'objective' and pdoc.config.type != 'submit_answer' %}
+            <span class="bp3-tag bp3-large bp3-minimal problem__tag-item bp3-icon-standard bp3-icon-stopwatch">{{ pdoc.config.timeMax if pdoc.config.timeMax == pdoc.config.timeMin else pdoc.config.timeMin+'~'+pdoc.config.timeMax }}ms</span>
+            <span class="bp3-tag bp3-large bp3-minimal problem__tag-item bp3-icon-standard bp3-icon-comparison">{{ pdoc.config.memoryMax if pdoc.config.memoryMax == pdoc.config.memoryMin else pdoc.config.memoryMin+'~'+pdoc.config.memoryMax }}MiB</span>
+          {% endif %}
+          {% if not tdoc %}
+            <a class="bp3-tag bp3-large bp3-minimal bp3-interactive problem__tag-item" href="{{ url('record_main', query={pid:pdoc.docId}) }}">{{ _('Tried') }}: {{ pdoc.nSubmit }}</a>
+            <a class="bp3-tag bp3-large bp3-minimal bp3-interactive problem__tag-item" href="{{ url('record_main', query={pid:pdoc.docId, status:1}) }}">{{ _('Accepted') }}: {{ pdoc.nAccept if ((not tdoc) or showAccept) else '?' }}</a>
+            <span class="bp3-tag bp3-large bp3-minimal problem__tag-item">{{ _('Difficulty') }}: {{ pdoc['difficulty'] or _('(None)') }}</span>
+          {% endif %}
+          <span class="bp3-tag bp3-large bp3-minimal bp3-interactive problem__tag-item">{{ _('Uploaded By') }}: {{ user.render_inline(udoc, badge=false) }}</span>
+          {% if pdoc.tag.length %}
+            <span name="show_tags" class="bp3-tag bp3-large bp3-minimal bp3-interactive problem__tag-item nojs--hide icon icon-tag">{{ _('Tags') + '>' }}</span>
+            {%- for tag in pdoc.tag -%}
+              <span class="bp3-tag bp3-large bp3-minimal problem__tag-item tags hasjs--hide">{{ tag }}</span>
+            {%- endfor -%}
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="problem-content-container"><div class="problem-content" data-marker-enabled>
+        <div class="section__header non-scratchpad--hide">
+          <h1 class="section__title">{{ pdoc.title }}</h1>
+        </div>
+        <div class="section__body typo">
+        {% if not pdoc.data.length %}
+          <blockquote class="warn">
+            <p>{{ _('No testdata at current.') }}</p>
+          </blockquote>
+        {% endif %}
+        {% if typeof(pdoc.config) == 'string' %}
+          <blockquote class="warn">
+            <p>{{ pdoc.config }}</p>
+          </blockquote>
+        {% endif %}
+        {% if tdoc and tdoc.docType == model.document.TYPE_CONTEST and model.contest.isDone(tdoc) %}
+          <blockquote class="note">
+            <p>{{ _('You cannot submit for this problem because the contest is ended. You can click "Open in Problem Set" to view this problem in normal mode.') }}</p>
+          </blockquote>
+        {% endif %}
+        {{ pdoc.content|content(handler.user.viewLang or handler.session.viewLang, pdoc.html)|safe }}
+        </div>
+      </div></div>
+    </div>
+  </div>
+  <div class="medium-3 columns">
+    {% set owner_udoc = udoc %}
+    {% include "partials/problem_sidebar.html" %}
+  </div>
+</div>
+<div style="display:none" class="outer-loader-container"><div class="loader"></div></div>
+<div class="scratchpad-container" style="display:none">
+  <div style="display:none" class="loader-container"><div class="loader"></div></div>
+  <div id="scratchpad" style="opacity:0"></div>
+</div>
+{% endblock %}
