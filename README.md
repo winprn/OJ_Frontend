@@ -5,8 +5,8 @@ Firstly, you'll need to install **npm, yarn** and **npx**.\
 Clone this repo, then open a terminal in this directory.\
 Run ``yarn install``\
 Next, run ``npx hydrooj addon add '@hydrooj/ui-default'``\
-Run ``yarn build:watch`` to enable the backend.
-Run ``yarn build:ui:dev`` to enable the frontend.
+Run ``yarn build:watch`` to enable the backend.\
+Run ``yarn build:ui:dev`` to enable the frontend.\
 Lastly, you need to run ``yarn debug --port=2333`` to connect to the database with the details given in discord server.\
 After first run, re-run ``yarn build:watch, yarn build:ui:dev, yarn debug --port=2333`` and the website is available at localhost:8000
 
