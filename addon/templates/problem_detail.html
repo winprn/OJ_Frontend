@@ -53,7 +53,7 @@
           {% endif %}
           <span class="bp3-tag bp3-large bp3-minimal bp3-interactive problem__tag-item">{{ _('Uploaded By') }}: {{ user.render_inline(udoc, badge=false) }}</span>
           {% if pdoc.tag.length %}
-            <span name="show_tags" class="bp3-tag bp3-large bp3-minimal bp3-interactive problem__tag-item nojs--hide icon icon-tag">{{ _('Tags') + '>' }}</span>
+            <span name="show_tags" class="bp3-tag bp3-large bp3-minimal bp3-interactive problem__tag-item nojs--hide icon icon-tag">{{ _('Tags') }}</span>
             {%- for tag in pdoc.tag -%}
               <span class="bp3-tag bp3-large bp3-minimal problem__tag-item tags hasjs--hide">{{ tag }}</span>
             {%- endfor -%}
@@ -79,7 +79,7 @@
         {% endif %}
         {% if tdoc and tdoc.docType == model.document.TYPE_CONTEST and model.contest.isDone(tdoc) %}
           <blockquote class="note">
-            <p>{{ _('You cannot submit for this problem because the contest is ended. You can click "Open in Problem Set" to view this problem in normal mode.') }}</p>
+            <p>{{ _('You cannot submit for this problem because the contest has ended. You can click "Open in Problem Set" to view this problem in normal mode.') }}</p>
           </blockquote>
         {% endif %}
         {{ pdoc.content|content(handler.user.viewLang or handler.session.viewLang, pdoc.html)|safe }}
