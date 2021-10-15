@@ -1,0 +1,52 @@
+footer_extra_html:
+  type: textarea
+  name: footer_extra_html
+  desc: Footer Extra HTML
+  default: ''
+nav_logo_dark:
+  type: text
+  name: nav_logo_dark
+  desc: Nav Logo Dark
+  default: /components/navigation/nav-logo-small_dark.png
+nav_logo_dark_2x:
+  type: text
+  name: nav_logo_dark_2x
+  desc: Nav Logo Dark@2x
+  default: /components/navigation/nav-logo-small@2x_dark.png
+preferredEditorType:
+  type:
+    wysiwyg: WYSIWYG
+    ir: Instant Rendering
+    sv: Split View
+    monaco: Monaco Editor
+  family: markdown
+  category: preference
+  value: monaco
+monacoTheme:
+  type:
+    vs-dark: VS Dark
+    vs-light: VS Light
+  category: preference
+  value: vs-light
+  family: markdown
+showInvisibleChar:
+  type: boolean
+  family: highlight
+  desc: show invisible characters when formatting code
+  category: preference
+formatCode:
+  type: boolean
+  family: highlight
+  desc: Auto format code
+  category: preference
+  value: true
+astyleOptions:
+  type: text
+  family: highlight
+  desc: astyle formatting options
+  category: preference
+  value: >
+    style=java attach-namespaces attach-classes attach-inlines attach-extern-c attach-closing-while 
+    indent-col1-comments break-blocks pad-oper pad-comma pad-header unpad-paren align-pointer=name 
+    break-one-line-headers attach-return-type attach-return-type-decl convert-tabs close-templates 
+    max-code-length=110 break-after-logical

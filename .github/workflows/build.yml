@@ -1,0 +1,93 @@
+name: CI
+
+on:
+- push
+- pull_request
+
+env:
+  CI: true
+  YARN_ENABLE_IMMUTABLE_INSTALLS: 'false'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      LICENSE_KEY: ${{ secrets.MAXMIND_KEY }}
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    steps:
+    - name: Check out
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: Set up Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    - name: Config
+      run: |
+        [[ ! -z "${{secrets.NPM_TOKEN}}" ]] && echo "npmAuthToken: ${{secrets.NPM_TOKEN}}" >> .yarnrc.yml
+        git config --global user.name undefined
+        git config --global user.email i@undefined.moe
+    - name: Install
+      run: yarn
+    - name: Build
+      run: |
+        yarn build
+        yarn build:ui:production
+    - name: Lint
+      run: yarn lint:ci
+    - name: Publish
+      if: ${{ github.event_name == 'push' }}
+      run: node build/publish.js
+  # web:
+  #   needs: build
+  #   permissions:
+  #     packages: write
+  #     contents: read
+  #   runs-on: ubuntu-latest
+  #   if: ${{ github.event_name == 'push' }}
+  #   steps:
+  #   - name: Check out
+  #     uses: actions/checkout@v2
+  #     with:
+  #       submodules: recursive
+  #   - name: Log in to GitHub Docker Registry
+  #     uses: docker/login-action@v1
+  #     with:
+  #       registry: docker.pkg.github.com
+  #       username: ${{ github.actor }}
+  #       password: ${{ secrets.GITHUB_TOKEN }}
+  #   - name: Docker:Web
+  #     uses: docker/build-push-action@v2
+  #     with:
+  #       push: true
+  #       context: ./install/docker/backend
+  #       tags: |
+  #         docker.pkg.github.com/hydro-dev/web:${{ github.sha }}
+  #         docker.pkg.github.com/hydro-dev/web:${{ github.ref }}
+  # judge:
+  #   needs: build
+  #   if: ${{ github.event_name == 'push' }}
+  #   permissions:
+  #     packages: write
+  #     contents: read
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Check out
+  #     uses: actions/checkout@v2
+  #     with:
+  #       submodules: recursive
+  #   - name: Log in to GitHub Docker Registry
+  #     uses: docker/login-action@v1
+  #     with:
+  #       registry: docker.pkg.github.com
+  #       username: ${{ github.actor }}
+  #       password: ${{ secrets.GITHUB_TOKEN }}
+  #   - name: Docker:Judge
+  #     uses: docker/build-push-action@v2
+  #     with:
+  #       push: true  
+  #       context: ./install/docker/judge
+  #       tags: |
+  #         docker.pkg.github.com/hydro-dev/judge:${{ github.sha }}
+  #         docker.pkg.github.com/hydro-dev/judge:${{ github.ref }}

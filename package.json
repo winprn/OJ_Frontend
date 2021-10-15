@@ -1,0 +1,57 @@
+{
+    "name": "hydro-workspace",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "main": "package.json",
+    "scripts": {
+        "build": "node build/prepare.js && tsc -b --verbose",
+        "build:watch": "node build/prepare.js && tsc -b --watch",
+        "build:ui": "node packages/ui-default/build",
+        "build:ui:dev": "node --trace-deprecation packages/ui-default/build --dev",
+        "build:ui:production": "node packages/ui-default/build --production",
+        "lint": "eslint packages --ext ts --fix",
+        "lint:ci": "eslint packages --ext ts",
+        "lint:ui": "yarn run --cwd=packages/ui-default eslint . --fix",
+        "lint:ui:ci": "yarn run --cwd=packages/ui-default eslint .",
+        "pub": "node build/publish",
+        "typedoc": "cross-env NODE_OPTIONS=--max_old_space_size=8192 typedoc",
+        "debug:all": "node --async-stack-traces --trace-deprecation build/start --debug --template",
+        "debug": "node --async-stack-traces --trace-deprecation node_modules/hydrooj/bin/hydrooj --debug --template",
+        "start:all": "node build/start",
+        "start": "node_modules/.bin/hydrooj",
+        "postinstall": "node build/hack",
+        "clean": "zsh -c \"rm -rf tsconfig.build.tsbuildinfo ./packages/*/tsconfig.tsbuildinfo ./.coverage\""
+    },
+    "version": "1.0.0",
+    "license": "AGPL-3.0-only",
+    "devDependencies": {
+        "@types/cross-spawn": "^6.0.2",
+        "@types/node": "^16.10.9",
+        "@types/semver": "^7.3.8",
+        "@typescript-eslint/eslint-plugin": "^5.0.0",
+        "@typescript-eslint/parser": "^5.0.0",
+        "cac": "^6.7.11",
+        "cross-env": "^7.0.3",
+        "cross-spawn": "^7.0.3",
+        "esbuild": "^0.13.6",
+        "eslint": "^8.0.1",
+        "eslint-config-airbnb-typescript": "12.3.1",
+        "eslint-import-resolver-typescript": "^2.5.0",
+        "eslint-plugin-import": "^2.25.2",
+        "eslint-plugin-simple-import-sort": "^7.0.0",
+        "fs-extra": "^10.0.0",
+        "globby": "11.0.4",
+        "latest-version": "^6.0.0",
+        "mongodb": "^3.7.2",
+        "nmls": "^3.0.1",
+        "ora": "5.4.1",
+        "semver": "^7.3.5",
+        "typedoc": "^0.22.5",
+        "typescript": "4.4.2"
+    },
+    "dependencies": {
+        "@hydrooj/ui-default": "workspace:packages/ui-default"
+    }
+}
