@@ -8,95 +8,95 @@ contest_detail: Chi tiết kỳ thi
 contest_edit: Chỉnh sửa kỳ thi
 contest_main: Kỳ thi
 contest_scoreboard: Bảng điểm
-discussion_create: Create Discussion
-discussion_detail: Discussion Detail
-discussion_edit: Discussion Edit
-discussion_main: Discussion
-discussion_node: Discussion
-display_name: Display Name
-domain_dashboard: Dashboard
-domain_discussion: Discussion Nodes
-domain_edit: Edit Info
-domain_join_applications: Join Applications
+discussion_create: Tạo Thảo luận
+discussion_detail: Chi tiết Thảo luận
+discussion_edit: Chỉnh sửa Thảo luận
+discussion_main: Thảo luận
+discussion_node: Thảo luận
+display_name: Tên hiển thị
+domain_dashboard: Bảng điều khiển
+domain_discussion: Thảo luận
+domain_edit: Chỉnh sửa thông tin
+domain_join_applications: Đơn xin tham gia
 domain_main: Trang chủ
-domain_permission: System Permission
-domain_role: System Role
-domain_user: System User
-fs_upload: File Upload
-home_account: Account Settings
-home_domain_account: Profile @ Domain
-home_domain_create: Create Domain
-home_domain: My Domains
-home_messages: Messages
-home_preference: Preference
-home_security: Security
-homepage: Home
-homework_create: Homework Create
-homework_detail_problem_submit: Submit Homework Problem
-homework_edit: Homework Edit
-homework_main: Homework
-homework_scoreboard: Scoreboard
-judge_playground: Judge Playground
-main: Home
-manage_dashboard: System
-manage_module: Module Management
-manage_script: Scripts
-manage_setting: System Settings
-manage_user_import: Import Users
-manage: System Manage
-no_translation_warn: <blockquote class="warn">This part of content is under translation.</blockquote>
-page.problem_detail.sidebar.show_category: Click to Show
-page.training_detail.invalid_when_not_enrolled: You cannot view problem details unless enrolled.
-pager_first: « First
-pager_last: Last »
-pager_next: Next ›
-pager_previous: ‹ Previous
-perm_contest: Contests
-perm_discussion: Discussions
-perm_general: General
-perm_problem_solution: Problem Solutions
-perm_problem: Problems
-perm_record: Records
-perm_training: Trainings
-problem_create: Problem Create
-problem_detail: Problem Detail
-problem_edit: Problem Edit
-problem_files: Problem Files
-problem_import: Import Problem
-problem_main: Problemset
-problem_solution: Problem Solution
-problem_statistics: Problem Statistics
-problem_submit: Problem Submit
+domain_permission: Quyền hệ thống
+domain_role: Vai trò hệ thống
+domain_user: Người dùng hệ thống
+fs_upload: Đăng tệp
+home_account: Thiết lập tài khoản
+home_domain_account: Hồ sơ @ Miền
+home_domain_create: Tạo tên miền
+home_domain: Miền của tôi
+home_messages: Tin nhắn
+home_preference: Tuỳ chỉnh
+home_security: Bảo mật
+homepage: Trang chủ
+homework_create: Tạo bài tập riêng
+homework_detail_problem_submit: Nộp bài tập riêng
+homework_edit: Điều chỉnh bài tập riêng
+homework_main: Bài tập riêng
+homework_scoreboard: Bảng điểm
+judge_playground: Sân chơi của Giám khảo
+main: Trang chủ
+manage_dashboard: Hệ thống
+manage_module: Quản lý module
+manage_script: Bản thảo
+manage_setting: Thiết lập hệ thống
+manage_user_import: Chèn người dùng
+manage: Quản lý hệ thống
+no_translation_warn: <blockquote class="warn">Phần này đang được dịch.</blockquote>
+page.problem_detail.sidebar.show_category: Nhấp chuột để hiển thị
+page.training_detail.invalid_when_not_enrolled: Bạn không thể xem chi tiết bài tập trừ khi đăng kí tham gia.
+pager_first: « Đầu
+pager_last: Cuối »
+pager_next: Tiếp ›
+pager_previous: ‹ Trước
+perm_contest: Kỳ thi
+perm_discussion: Thảo luận
+perm_general: Tổng quan
+perm_problem_solution: Lời giải
+perm_problem: Bài
+perm_record: Các bài nộp
+perm_training: Luyện tập
+problem_create: Tạo bài
+problem_detail: Chi tiết bài
+problem_edit: Điều chỉnh bài
+problem_files: Các tệp của bài
+problem_import: Thêm bài từ ngoài
+problem_main: Danh sách bài
+problem_solution: Lời giải bài
+problem_statistics: Thống kê
+problem_submit: Nộp bài
 problem-category-delim: '|'
 problem-subcategory-delim: ', '
-problem.import.additional_file: '## Tệp đính kèm'
+problem.import.additional_file: '## Tệp riêng'
 problem.import.hint: '## Gợi ý'
-problem.import.input_format: '## Định dạng đầu vào'
+problem.import.input_format: '## Cú pháp Input'
 problem.import.limit_and_hint: '## Giới hạn'
-problem.import.output_format: '## Định dạng đầu ra'
-problem.import.problem_description: '## Đề bài'
-ranking: BXH
+problem.import.output_format: '## Cú pháp Output'
+problem.import.problem_description: '## Mô tả'
+ranking: Bảng xếp hạng
 record_detail: Chi tiết bài nộp
-record_main: Các bài nộp
-setting_customize: Customize
-setting_display: Display Preference
-setting_function: Function
-setting_info_domain: Personal Info
-setting_info: Personal Info
-setting_preference: Preference
-setting_privacy: Privacy
-setting_server: Server Settings
-setting_session: Session Settings
-setting_smtp: SMTP Settings
-setting_usage: Usage Preference
-timeago_locale: en_US
-training_create: Training Create
-training_detail: Training Detail
-training_edit: Training Edit
-training_main: Training
-user_detail: User Detail
+record_main: Bài nộp
+setting_customize: Tuỳ chỉnh
+setting_display: Hiển thị tham khảo
+setting_function: Chức năng
+setting_info_domain: Thông tin cá nhân
+setting_info: Thông tin cá nhân
+setting_preference: Tham khảo
+setting_privacy: Riêng tư
+setting_server: Thiết lập Server
+setting_session: Thiết lập Session
+setting_smtp: Thiết lập SMTP
+setting_usage: Cách sử dụng Tham khảo
+timeago_locale: vi_VN
+training_create: Tạo Luyện tập
+training_detail: Chi tiết Luyện tập
+training_edit: Chỉnh sửa Luyện tập
+training_main: Luyện tập
+user_detail: Chi tiết người dùng
 user_login: Đăng nhập
 user_logout: Đăng xuất
-user_lostpass: Lost Password
-user_register: Đăng ký
-wiki_help: Help
+user_lostpass: Quên mật khẩu
+user_register: Đăng kí
+wiki_help: Hướng dẫn
