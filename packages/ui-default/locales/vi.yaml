@@ -2,7 +2,7 @@ __id: vi
 __langname: Tiếng Việt
 Can be Extended For: Extension
 contest_create: Tạo kỳ thi
-contest_detail_problem: Chi tiết bài tập
+contest_detail_problem: Chi tiết bài nộp
 contest_detail_problem_submit: Nộp bài
 contest_detail: Chi tiết kỳ thi
 contest_edit: Chỉnh sửa kỳ thi
@@ -22,31 +22,31 @@ domain_main: Trang chủ
 domain_permission: Quyền hệ thống
 domain_role: Vai trò hệ thống
 domain_user: Người dùng hệ thống
-fs_upload: Đăng tệp
-home_account: Thiết lập tài khoản
-home_domain_account: Hồ sơ @ Miền
-home_domain_create: Tạo tên miền
-home_domain: Miền của tôi
+fs_upload: Tải lên tệp
+home_account: Cài đặt tài khoản
+home_domain_account: Hồ sơ @ Domain
+home_domain_create: Tạo Domain
+home_domain: Domain của tôi
 home_messages: Tin nhắn
 home_preference: Tuỳ chỉnh
 home_security: Bảo mật
 homepage: Trang chủ
-homework_create: Tạo bài tập riêng
-homework_detail_problem_submit: Nộp bài tập riêng
-homework_edit: Điều chỉnh bài tập riêng
-homework_main: Bài tập riêng
+homework_create: Tạo bài tập
+homework_detail_problem_submit: Nộp bài tập
+homework_edit: Chỉnh sửa bài tập
+homework_main: Bài tập
 homework_scoreboard: Bảng điểm
-judge_playground: Sân chơi của Giám khảo
+judge_playground: Không gian trình chấm
 main: Trang chủ
 manage_dashboard: Hệ thống
-manage_module: Quản lý module
-manage_script: Bản thảo
-manage_setting: Thiết lập hệ thống
-manage_user_import: Chèn người dùng
+manage_module: Quản lý Module
+manage_script: Scripts
+manage_setting: Cài đặt hệ thống
+manage_user_import: Tải lên Người dùng
 manage: Quản lý hệ thống
 no_translation_warn: <blockquote class="warn">Phần này đang được dịch.</blockquote>
 page.problem_detail.sidebar.show_category: Nhấp chuột để hiển thị
-page.training_detail.invalid_when_not_enrolled: Bạn không thể xem chi tiết bài tập trừ khi đăng kí tham gia.
+page.training_detail.invalid_when_not_enrolled: Bạn không thể xem chi tiết bài tập trừ khi đăng ký tham gia.
 pager_first: « Đầu
 pager_last: Cuối »
 pager_next: Tiếp ›
@@ -60,35 +60,35 @@ perm_record: Các bài nộp
 perm_training: Luyện tập
 problem_create: Tạo bài
 problem_detail: Chi tiết bài
-problem_edit: Điều chỉnh bài
+problem_edit: Chỉnh sửa bài
 problem_files: Các tệp của bài
-problem_import: Thêm bài từ ngoài
+problem_import: Tải lên bài
 problem_main: Danh sách bài
-problem_solution: Lời giải bài
+problem_solution: Lời giải
 problem_statistics: Thống kê
 problem_submit: Nộp bài
 problem-category-delim: '|'
 problem-subcategory-delim: ', '
-problem.import.additional_file: '## Tệp riêng'
+problem.import.additional_file: '## Tệp được thêm vào'
 problem.import.hint: '## Gợi ý'
-problem.import.input_format: '## Cú pháp Input'
+problem.import.input_format: '## Dữ liệu đầu vào'
 problem.import.limit_and_hint: '## Giới hạn'
-problem.import.output_format: '## Cú pháp Output'
+problem.import.output_format: '## Dữ liệu đầu ra'
 problem.import.problem_description: '## Mô tả'
 ranking: Bảng xếp hạng
 record_detail: Chi tiết bài nộp
 record_main: Bài nộp
 setting_customize: Tuỳ chỉnh
-setting_display: Hiển thị tham khảo
+setting_display: Tuỳ chỉnh Hiển thị
 setting_function: Chức năng
 setting_info_domain: Thông tin cá nhân
 setting_info: Thông tin cá nhân
-setting_preference: Tham khảo
-setting_privacy: Riêng tư
-setting_server: Thiết lập Server
-setting_session: Thiết lập Session
-setting_smtp: Thiết lập SMTP
-setting_usage: Cách sử dụng Tham khảo
+setting_preference: Tuỳ chỉnh
+setting_privacy: Quyền riêng tư
+setting_server: Cài đặt Server
+setting_session: Cài đặt Session
+setting_smtp: Cài đặt SMTP
+setting_usage: Tuỳ chỉnh ngôn ngữ biên dịch & trình soạn thảo
 timeago_locale: vi_VN
 training_create: Tạo Luyện tập
 training_detail: Chi tiết Luyện tập
@@ -98,5 +98,5 @@ user_detail: Chi tiết người dùng
 user_login: Đăng nhập
 user_logout: Đăng xuất
 user_lostpass: Quên mật khẩu
-user_register: Đăng kí
+user_register: Đăng ký
 wiki_help: Hướng dẫn
