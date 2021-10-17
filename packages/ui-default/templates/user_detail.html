@@ -24,60 +24,60 @@
               <p>
                 {{ _('Registered at') }} {{ datetimeSpan(udoc['regat'])|safe }},
                 {{ _('last login at') }} {{ datetimeSpan(udoc['loginat'])|safe }},
-              {% if sdoc %}
+                {% if sdoc %}
                 {{ _('last active at') }} {{ datetimeSpan(sdoc['updateAt'])|safe }}.
-              {% else %}
+                {% else %}
                 {{ _('currently offline') }}.
-              {% endif %}
+                {% endif %}
               </p>
-              <p>{{ _('Solved {0} problems, RP: {1} (No. {2})').format(udoc.nAccept|default(0), udoc['rp']|default(0.0)|round(2), udoc['rank']|default('?')) }}</p>
+              <p>{{ _('Solved {0} problems, RP: {1} (No. {2})').format(udoc.nAccept|default(0),
+                udoc['rp']|default(0.0)|round(2), udoc['rank']|default('?')) }}</p>
               <div class="profile-header__contact-bar">
-              {% if isSelfProfile %}
-                <a class="profile-header__contact-item" href="{{ url('home_settings', category='account') }}" data-tooltip="{{ _('Edit Profile') }}">
+                {% if isSelfProfile %}
+                <a class="profile-header__contact-item" href="{{ url('home_settings', category='account') }}"
+                  data-tooltip="{{ _('Edit Profile') }}">
                   <span class="icon icon-edit"></span>
                 </a>
-              {% endif %}
-                <a class="profile-header__contact-item" href="{{ url('home_messages', query={target:udoc._id}) }}" target="_blank" data-tooltip="{{ _('Send Message') }}">
+                {% endif %}
+                <a class="profile-header__contact-item" href="{{ url('home_messages', query={target:udoc._id}) }}"
+                  target="_blank" data-tooltip="{{ _('Send Message') }}">
                   <span class="icon icon-comment--multiple"></span>
                 </a>
-              {% if udoc['mail'] %}
-                <a class="profile-header__contact-item" href="javascript:;" data-copy="{{ udoc['mail'] | base64_encode }}" data-tooltip="{{ _('Copy Email') }}">
+                <!-- {% if udoc['mail'] %}
+                <a class="profile-header__contact-item" href="javascript:;"
+                  data-copy="{{ udoc['mail'] | base64_encode }}" data-tooltip="{{ _('Copy Email') }}">
                   <span class="icon icon-mail"></span>
                 </a>
-              {% endif %}
-              {% if udoc['qq'] %}
-                <a class="profile-header__contact-item" href="javascript:;" data-copy="{{ udoc['qq'] | base64_encode }}" data-tooltip="{{ _('Copy QQ Number') }}">
+                {% endif %} -->
+                {% if udoc['qq'] %}
+                <a class="profile-header__contact-item" href="javascript:;" data-copy="{{ udoc['qq'] | base64_encode }}"
+                  data-tooltip="{{ _('Copy QQ Number') }}">
                   <span class="icon icon-qq"></span>
                 </a>
-              {% endif %}
-              {% if udoc['wechat'] %}
-                <a class="profile-header__contact-item" href="javascript:;" data-copy="{{ udoc['wechat'] | base64_encode }}" data-tooltip="{{ _('Copy WeChat Account') }}">
+                {% endif %}
+                {% if udoc['wechat'] %}
+                <a class="profile-header__contact-item" href="javascript:;"
+                  data-copy="{{ udoc['wechat'] | base64_encode }}" data-tooltip="{{ _('Copy WeChat Account') }}">
                   <span class="icon icon-wechat"></span>
                 </a>
-              {% endif %}
-              {% if udoc.gender and udoc.gender != model.builtin.USER_GENDER_OTHER %}
-                <span
-                  class="profile-header__contact-item"
-                  data-tooltip="{{ model.builtin.USER_GENDER_RANGE[udoc.gender] }}"
-                >
+                {% endif %}
+                {% if udoc.gender and udoc.gender != model.builtin.USER_GENDER_OTHER %}
+                <span class="profile-header__contact-item"
+                  data-tooltip="{{ model.builtin.USER_GENDER_RANGE[udoc.gender] }}">
                   {{ model.builtin.USER_GENDER_ICONS[udoc.gender] }}
                 </span>
-              {% endif %}
-              {% if udoc.hasPriv(PRIV.PRIV_MOD_BADGE) %}
-                <span
-                  class="profile-header__contact-item user-profile-badge badge--su"
-                  data-tooltip="{{ _('{0} is a superuser.').format(_('She' if udoc.gender == 1 else 'He')) }}"
-                >
+                {% endif %}
+                {% if udoc.hasPriv(PRIV.PRIV_MOD_BADGE) %}
+                <span class="profile-header__contact-item user-profile-badge badge--su"
+                  data-tooltip="This is a super user">
                   SU
                 </span>
-              {% elif udoc.hasPerm(perm.PERM_MOD_BADGE) %}
-                <span
-                  class="profile-header__contact-item user-profile-badge badge--mod"
-                  data-tooltip="{{ _('{0} is a moderator of this domain.').format(_('She' if udoc.gender == 1 else 'He')) }}"
-                >
+                {% elif udoc.hasPerm(perm.PERM_MOD_BADGE) %}
+                <span class="profile-header__contact-item user-profile-badge badge--mod"
+                  data-tooltip="{{ _('{0} is a moderator of this domain.').format(_('She' if udoc.gender == 1 else 'He')) }}">
                   MOD
                 </span>
-              {% endif %}
+                {% endif %}
               </div>
             </div>
           </div>
@@ -89,13 +89,13 @@
             <li class="section__tab-item">
               <h1 class="section__tab-title">{{ _('Bio') }}</h1>
               <div class="section__tab-main">
-              {% if not udoc.bio %}
+                {% if not udoc.bio %}
                 {{ nothing.render("This person is lazy and didn't wrote anything.") }}
-              {% else %}
+                {% else %}
                 <div class="section__body typo">
                   {{ udoc.bio|default('')|markdown|safe }}
                 </div>
-              {% endif %}
+                {% endif %}
               </div>
             </li>
           </ul>
@@ -104,9 +104,9 @@
     </div>
   </div>
   <div class="medium-3 columns">
-  {% if isSelfProfile %}
+    {% if isSelfProfile %}
     {{ home.render_sidebar() }}
-  {% endif %}
+    {% endif %}
     <div class="section side">
       <div class="section__body">
         <div class="balancer sidebar-user-stat">

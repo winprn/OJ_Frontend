@@ -14,7 +14,7 @@
             <colgroup>
               <col class="col--rank">
               <col class="col--user">
-              <col class="col--rp">
+              <!-- <col class="col--rp"> -->
               <col class="col--ac">
               <col class="col--bio">
             </colgroup>
@@ -22,7 +22,7 @@
               <tr>
                 <th class="col--rank">{{ _('Rank') }}</th>
                 <th class="col--user">{{ _('Username') }}</th>
-                <th class="col--rp">{{ _('RP') }}</th>
+                <!-- <th class="col--rp">{{ _('RP') }}</th> -->
                 <th class="col--ac">{{ _('Accepted Submissions') }}</th>
                 <th class="col--bio">{{ _('Bio') }}</th>
               </tr>
@@ -32,7 +32,7 @@
               <tr>
                 <td class="col--rank">{{ (page - 1) * 100 + loop.index }}</td>
                 <td class="col--user">{{ user.render_inline(udoc) }}</td>
-                <td class="col--rp">{{ udoc.rp|default(1500)|round(0) }}</td>
+                <!-- <td class="col--rp">{{ udoc.rp|default(1500)|round(0) }}</td> -->
                 <td class="col--ac">{{ udoc.nAccept|default(0) }}</td>
                 <td class="col--bio">{{ udoc.bio|default('')|truncate(64, true)|markdownInline|safe }}</td>
               </tr>
