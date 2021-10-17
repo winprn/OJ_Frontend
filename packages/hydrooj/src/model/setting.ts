@@ -114,11 +114,11 @@ const LangSettingNode = {
 };
 
 PreferenceSetting(
-    Setting('setting_display', 'viewLang', null, langRange, 'UI Language'),
-    Setting('setting_display', 'timeZone', 'Asia/Shanghai', timezones, 'Timezone'),
+    Setting('setting_display', 'viewLang', null, langRange, 'Ngôn ngữ'),
+    Setting('setting_display', 'timeZone', 'Asia/Shanghai', timezones, 'Thời gian'),
     LangSettingNode,
-    Setting('setting_usage', 'codeTemplate', '', 'textarea', 'Default Code Template',
-        'If left blank, the built-in template of the corresponding language will be used.'),
+    Setting('setting_usage', 'codeTemplate', '', 'textarea', 'Code mặc định',
+        'bbbb'),
 );
 
 AccountSetting(

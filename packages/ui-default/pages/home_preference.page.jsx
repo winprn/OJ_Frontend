@@ -24,7 +24,7 @@ const page = new NamedPage('home_preference', async () => {
       render() {
         return (
           <>
-            <div className="medium-4 columns form__item end">
+            {/* <div className="medium-4 columns form__item end">
               <label htmlFor="astyleOptions_input">
                 {i18n('astyleOptions')}
                 <div id="astyleOptions_input" name="form_item_astyleOptions" className="textbox-container">
@@ -44,14 +44,13 @@ const page = new NamedPage('home_preference', async () => {
                   />
                 </div>
               </label>
-              <p className="help-text">{i18n('astyle formatting options')}</p>
-            </div>
-            <div className="medium-8 columns form__item end">
+              <p className="help-text">{i18n('aaaa')}</p>
+            </div> */}
+            {/* <div className="medium-8 columns form__item end">
               <label htmlFor="astylePreview">
-                {i18n('Preview') /* eslint-disable-next-line */}
                 <pre id="astylePreview" style={{ height: '400px' }}><code dangerouslySetInnerHTML={{ __html: this.state.highlight }}></code></pre>
               </label>
-            </div>
+            </div> */}
           </>
         );
       }
@@ -68,7 +67,7 @@ const page = new NamedPage('home_preference', async () => {
 <div class="row">
   <div class="medium-5 columns form__item end">
     <label>
-      ${i18n('Code language')}
+      ${i18n('Ngôn ngữ chính')}
       <div name="form_item_lang" class="select-container">
         <select id="codelang-main-select" class="select"></select>
       </div>
@@ -76,7 +75,7 @@ const page = new NamedPage('home_preference', async () => {
   </div>
   <div class="medium-5 columns form__item end" style="display: none" id="codelang-sub-container">
     <label>
-      ${i18n('Code language')}
+      ${i18n('Phiên bản')}
       <div name="form_item_lang" class="select-container">
         <select id="codelang-sub-select" class="select"></select>
       </div>
