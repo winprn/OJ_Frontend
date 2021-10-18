@@ -63,7 +63,7 @@ problem_detail: Problem Detail
 problem_edit: Problem Edit
 problem_files: Problem Files
 problem_import: Import Problem
-problem_main: Problem Set
+problem_main: Problemset
 problem_solution: Problem Solution
 problem_statistics: Problem Statistics
 problem_submit: Problem Submit
@@ -76,8 +76,8 @@ problem.import.limit_and_hint: '## Limits'
 problem.import.output_format: '## Output Format'
 problem.import.problem_description: '## Description'
 ranking: Ranking
-record_detail: Record Detail
-record_main: Record
+record_detail: Submission's Detail
+record_main: Submissions
 setting_customize: Customize
 setting_display: Display Preference
 setting_function: Function
@@ -94,9 +94,11 @@ training_create: Training Create
 training_detail: Training Detail
 training_edit: Training Edit
 training_main: Training
+testtt: Abcxyz
 user_detail: User Detail
 user_login: Login
 user_logout: Logout
 user_lostpass: Lost Password
 user_register: Register
 wiki_help: Help
+something: aaa

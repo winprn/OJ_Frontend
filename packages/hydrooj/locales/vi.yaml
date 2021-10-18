@@ -1,7 +1,6 @@
 __id: vi
 __langname: Tiếng Việt
 Can be Extended For: Extension
-account_settings: Account Settings
 contest_create: Tạo kỳ thi
 contest_detail_problem: Chi tiết bài tập
 contest_detail_problem_submit: Nộp bài
@@ -31,7 +30,6 @@ home_domain: Miền của tôi
 home_messages: Tin nhắn
 home_preference: Tuỳ chỉnh
 home_security: Bảo mật
-home_settings: Preference Settings
 homepage: Trang chủ
 homework_create: Tạo bài tập riêng
 homework_detail_problem_submit: Nộp bài tập riêng
@@ -96,9 +94,11 @@ training_create: Tạo Luyện tập
 training_detail: Chi tiết Luyện tập
 training_edit: Chỉnh sửa Luyện tập
 training_main: Luyện tập
+testtt: Abcxyz
 user_detail: Chi tiết người dùng
 user_login: Đăng nhập
 user_logout: Đăng xuất
 user_lostpass: Quên mật khẩu
 user_register: Đăng kí
 wiki_help: Hướng dẫn
+something: con cac

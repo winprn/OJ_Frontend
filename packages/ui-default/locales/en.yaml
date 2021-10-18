@@ -1,6 +1,7 @@
 __id: en
 __langname: English
 Can be Extended For: Extension
+account_settings: Account Settings
 contest_create: Contest Create
 contest_detail_problem: Problem Detail
 contest_detail_problem_submit: Submit Contest Problem
@@ -30,6 +31,7 @@ home_domain: My Domains
 home_messages: Messages
 home_preference: Preference
 home_security: Security
+home_settings: Preference Settings
 homepage: Home
 homework_create: Homework Create
 homework_detail_problem_submit: Submit Homework Problem
