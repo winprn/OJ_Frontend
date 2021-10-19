@@ -1,7 +1,7 @@
 __id: vi
 __langname: Tiếng Việt
 Can be Extended For: Extension
-account_settings: Account Settings
+account_settings: Tuỳ chỉnh tài khoản
 contest_create: Tạo kỳ thi
 contest_detail_problem: Chi tiết bài nộp
 contest_detail_problem_submit: Nộp bài
@@ -31,7 +31,7 @@ home_domain: Domain của tôi
 home_messages: Tin nhắn
 home_preference: Tuỳ chỉnh
 home_security: Bảo mật
-home_settings: Preference Settings
+home_settings: Tuỳ chỉnh hệ thống
 homepage: Trang chủ
 homework_create: Tạo bài tập
 homework_detail_problem_submit: Nộp bài tập
@@ -39,6 +39,7 @@ homework_edit: Chỉnh sửa bài tập
 homework_main: Bài tập
 homework_scoreboard: Bảng điểm
 judge_playground: Không gian trình chấm
+logout: Đăng xuất
 main: Trang chủ
 manage_dashboard: Hệ thống
 manage_module: Quản lý Module
@@ -46,6 +47,8 @@ manage_script: Scripts
 manage_setting: Cài đặt hệ thống
 manage_user_import: Tải lên Người dùng
 manage: Quản lý hệ thống
+my_files: Tệp của tôi
+my_profile: Trang cá nhân
 no_translation_warn: <blockquote class="warn">Phần này đang được dịch.</blockquote>
 page.problem_detail.sidebar.show_category: Nhấp chuột để hiển thị
 page.training_detail.invalid_when_not_enrolled: Bạn không thể xem chi tiết bài tập trừ khi đăng ký tham gia.

@@ -55,6 +55,10 @@ export const Setting = (
         type = 'textarea';
         subType = 'yaml';
     }
+    if (name == 'preferredEditorType') name = 'default_editor_type', family = 'code_editor';
+    if (name == 'monacoTheme') name = 'default_theme', family = 'code_editor';
+    if (name == 'showInvisibleChar') name = 'show_invisible_char', family = 'other_settings';
+    if (name == 'formatCode') name = 'format_code', family = 'other_settings';
     return {
         family,
         key,
@@ -114,11 +118,11 @@ const LangSettingNode = {
 };
 
 PreferenceSetting(
-    Setting('setting_display', 'viewLang', null, langRange, 'Ngôn ngữ'),
-    Setting('setting_display', 'timeZone', 'Asia/Shanghai', timezones, 'Thời gian'),
+    Setting('setting_display', 'viewLang', null, langRange, 'default_language'),
+    Setting('setting_display', 'timeZone', 'Asia/Shanghai', timezones, 'timezone'),
     LangSettingNode,
-    Setting('setting_usage', 'codeTemplate', '', 'textarea', 'Code mặc định',
-        'bbbb'),
+    Setting('setting_usage', 'codeTemplate', '', 'textarea', 'default_code',
+        'template_note'),
 );
 
 AccountSetting(

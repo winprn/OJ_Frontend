@@ -67,7 +67,7 @@ const page = new NamedPage('home_preference', async () => {
 <div class="row">
   <div class="medium-5 columns form__item end">
     <label>
-      ${i18n('Ngôn ngữ chính')}
+      ${i18n('default_code_language')}
       <div name="form_item_lang" class="select-container">
         <select id="codelang-main-select" class="select"></select>
       </div>
@@ -75,7 +75,7 @@ const page = new NamedPage('home_preference', async () => {
   </div>
   <div class="medium-5 columns form__item end" style="display: none" id="codelang-sub-container">
     <label>
-      ${i18n('Phiên bản')}
+      ${i18n('default_code_version')}
       <div name="form_item_lang" class="select-container">
         <select id="codelang-sub-select" class="select"></select>
       </div>

@@ -37,14 +37,14 @@ showInvisibleChar:
 formatCode:
   type: boolean
   family: highlight
-  desc: Auto format code
+  desc:
   category: preference
   value: true
 astyleOptions:
   type: text
-  family: highlight
+  family: none
   desc: astyle formatting options
-  category: preference
+  category: 
   value: >
     style=java attach-namespaces attach-classes attach-inlines attach-extern-c attach-closing-while 
     indent-col1-comments break-blocks pad-oper pad-comma pad-header unpad-paren align-pointer=name 

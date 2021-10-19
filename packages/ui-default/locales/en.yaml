@@ -2,6 +2,11 @@ __id: en
 __langname: English
 Can be Extended For: Extension
 account_settings: Account Settings
+active_sessions: Active Sessions
+browser: Browser
+change_email: Change Email
+change_password: Change Password
+code_editor: Code Editor Settings
 contest_create: Contest Create
 contest_detail_problem: Problem Detail
 contest_detail_problem_submit: Submit Contest Problem
@@ -9,6 +14,14 @@ contest_detail: Contest Detail
 contest_edit: Contest Edit
 contest_main: Contest
 contest_scoreboard: Scoreboard
+current_password: Current Password
+current_email: Current Email
+default_code: Default Template
+default_code_language: Main Language
+default_code_version: Version
+default_editor_type: Editor Type
+default_language: Default Language
+default_theme: Default Theme
 discussion_create: Create Discussion
 discussion_detail: Discussion Detail
 discussion_edit: Discussion Edit
@@ -23,6 +36,7 @@ domain_main: Main
 domain_permission: System Permission
 domain_role: System Role
 domain_user: System User
+format_code: Auto Format Code
 fs_upload: File Upload
 home_account: Account Settings
 home_domain_account: Profile @ Domain
@@ -38,15 +52,24 @@ homework_detail_problem_submit: Submit Homework Problem
 homework_edit: Homework Edit
 homework_main: Homework
 homework_scoreboard: Scoreboard
+hostname: Hostname
 judge_playground: Judge Playground
 main: Home
+location: Location
 manage_dashboard: System
 manage_module: Module Management
 manage_script: Scripts
 manage_setting: System Settings
 manage_user_import: Import Users
 manage: System Manage
+my_files: My Files
+my_profile: User Profile
+new_email: New Email
+new_password: New Password
 no_translation_warn: <blockquote class="warn">This part of content is under translation.</blockquote>
+no_email_warn: You haven't set up an email. Consider adding one.
+operating_system: OS
+other_settings: Other Settings
 page.problem_detail.sidebar.show_category: Click to Show
 page.training_detail.invalid_when_not_enrolled: You cannot view problem details unless enrolled.
 pager_first: « First
@@ -80,6 +103,11 @@ problem.import.problem_description: '## Description'
 ranking: Ranking
 record_detail: Submission's Detail
 record_main: Submissions
+repeat_password: Repeat Password
+session_current: Current Session
+session_last_update: Updated At
+session_logout: Logout This Session
+session_logout_all: Logout All Sessions
 setting_customize: Customize
 setting_display: Display Preference
 setting_function: Function
@@ -91,7 +119,11 @@ setting_server: Server Settings
 setting_session: Session Settings
 setting_smtp: SMTP Settings
 setting_usage: Usage Preference
+show_invisible_char: Auto Show Invisible Character
+template_note: If the code template is not set, system's default will be used
+test: ABCXYZ
 timeago_locale: en_US
+timezone: Timezone
 training_create: Training Create
 training_detail: Training Detail
 training_edit: Training Edit
