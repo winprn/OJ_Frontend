@@ -2,6 +2,11 @@ __id: vi
 __langname: Tiếng Việt
 Can be Extended For: Extension
 account_settings: Tuỳ chỉnh tài khoản
+active_sessions: Phiên đang hoạt động
+browser: Trình duyệt
+change_email: Thay đổi Email
+change_password: Thay đổi mật khẩu
+code_editor: Cài đặt trình soạn thảo
 contest_create: Tạo kỳ thi
 contest_detail_problem: Chi tiết bài nộp
 contest_detail_problem_submit: Nộp bài
@@ -9,6 +14,14 @@ contest_detail: Chi tiết kỳ thi
 contest_edit: Chỉnh sửa kỳ thi
 contest_main: Kỳ thi
 contest_scoreboard: Bảng điểm
+current_email: Email hiện tại
+current_password: Mật khẩu hiện tại
+default_code: Template mặc định
+default_code_language: Ngôn ngữ biên dịch chính
+default_code_version: Phiên bản
+default_editor_type: Kiểu soạn thảo
+default_language: Ngôn ngữ mặc định
+default_theme: Chủ đề mặc định
 discussion_create: Tạo Thảo luận
 discussion_detail: Chi tiết Thảo luận
 discussion_edit: Chỉnh sửa Thảo luận
@@ -23,6 +36,7 @@ domain_main: Trang chủ
 domain_permission: Quyền hệ thống
 domain_role: Vai trò hệ thống
 domain_user: Người dùng hệ thống
+format_code: Tự động format code
 fs_upload: Tải lên tệp
 home_account: Cài đặt tài khoản
 home_domain_account: Hồ sơ @ Domain
@@ -38,7 +52,9 @@ homework_detail_problem_submit: Nộp bài tập
 homework_edit: Chỉnh sửa bài tập
 homework_main: Bài tập
 homework_scoreboard: Bảng điểm
+hostname: Hostname
 judge_playground: Không gian trình chấm
+location: Vị trí
 logout: Đăng xuất
 main: Trang chủ
 manage_dashboard: Hệ thống
@@ -49,7 +65,12 @@ manage_user_import: Tải lên Người dùng
 manage: Quản lý hệ thống
 my_files: Tệp của tôi
 my_profile: Trang cá nhân
+new_email: Email mới
+new_password: Mật khẩu mới
+no_email_warn: Bạn chưa thiết lập email. Vui lòng cập nhật.
 no_translation_warn: <blockquote class="warn">Phần này đang được dịch.</blockquote>
+operating_system: HĐH
+other_settings: Cài đặt khác
 page.problem_detail.sidebar.show_category: Nhấp chuột để hiển thị
 page.training_detail.invalid_when_not_enrolled: Bạn không thể xem chi tiết bài tập trừ khi đăng ký tham gia.
 pager_first: « Đầu
@@ -83,6 +104,11 @@ problem.import.problem_description: '## Mô tả'
 ranking: Bảng xếp hạng
 record_detail: Chi tiết bài nộp
 record_main: Bài nộp
+repeat_password: Nhập lại mật khẩu
+session_current: Phiên đăng nhập hiện tại
+session_last_update: Cập nhật lúc
+session_logout: Đăng xuất phiên đăng nhập này
+session_logout_all: Đăng xuất tất cả phiên đăng nhập
 setting_customize: Tuỳ chỉnh
 setting_display: Tuỳ chỉnh Hiển thị
 setting_function: Chức năng
@@ -91,10 +117,13 @@ setting_info: Thông tin cá nhân
 setting_preference: Tuỳ chỉnh
 setting_privacy: Quyền riêng tư
 setting_server: Cài đặt Server
-setting_session: Cài đặt Session
+setting_session: Cài đặt phiên đăng nhập
 setting_smtp: Cài đặt SMTP
 setting_usage: Tuỳ chỉnh ngôn ngữ biên dịch & trình soạn thảo
+show_invisible_char: Tự động hiển thị ký tự ẩn
+template_note: Nếu template chưa được tuỳ chỉnh, template mặc định sẽ được sử dụng
 timeago_locale: vi_VN
+timezone: Múi giờ
 training_create: Tạo Luyện tập
 training_detail: Chi tiết Luyện tập
 training_edit: Chỉnh sửa Luyện tập
