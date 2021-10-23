@@ -7,18 +7,21 @@
       <div class="section__body">
         <ul class="supplementary list">
           <li>
-            <a class="discussion-node-tag" href="{{ url('discussion_node', type=model.discussion.typeDisplay[vnode.type], name=vnode.id) }}">
-            {% if ddoc.parentType == model.document.TYPE_DISCUSSION_NODE %}
+            <a class="discussion-node-tag"
+              href="{{ url('discussion_node', type=model.discussion.typeDisplay[vnode.type], name=vnode.id) }}">
+              {% if ddoc.parentType == model.document.TYPE_DISCUSSION_NODE %}
               <span class="v-center icon icon-tag"></span>
-            {% elif ddoc.parentType == model.document.TYPE_CONTEST %}
+              {% elif ddoc.parentType == model.document.TYPE_CONTEST %}
               <span class="v-center icon icon-award"></span>
-            {% else %}
+              {% else %}
               <span class="v-center icon icon-flag"></span>
-            {% endif %}
+              {% endif %}
               {{ vnode['title'] }}
             </a>
           </li>
-          <li><h2>{{ ddoc.title }}</h2></li>
+          <li>
+            <h2>{{ ddoc.title }}</h2>
+          </li>
           <li>
             {{ user.render_inline(udict[ddoc.owner]) }}
             @
@@ -30,25 +33,28 @@
         </div>
       </div>
       <ul class="section__footer supplementary dot list">
-      {% if handler.user.hasPerm(perm.PERM_EDIT_DISCUSSION) or (handler.user.own(ddoc) and handler.user.hasPerm(perm.PERM_EDIT_DISCUSSION_SELF)) %}
+        {% if handler.user.hasPerm(perm.PERM_EDIT_DISCUSSION) or (handler.user.own(ddoc) and
+        handler.user.hasPerm(perm.PERM_EDIT_DISCUSSION_SELF)) %}
         <li><a href="{{ url('discussion_edit', did=ddoc.docId) }}">
-          <span class="icon icon-edit"></span> {{ _('Edit') }}
-        </a></li>
-      {% endif %}
+            <span class="icon icon-edit"></span> {{ _('Edit') }}
+          </a></li>
+        {% endif %}
         <li>{{ _('{0} views').format(ddoc.views) }}</li>
-      {% if handler.user.hasPriv(PRIV.PRIV_USER_PROFILE) %}
-        <li><form class="form--inline" method="post">
-          <input type="hidden" name="operation" value="{% if not dsdoc['star'] %}star{% else %}unstar{% endif %}">
-          <input type="hidden" name="csrfToken" value="{{ handler.csrfToken }}">
-          <button class="star{% if dsdoc['star'] %} activated{% endif %}" type="submit">
-            <span class="starred--hide"><span class="icon icon-star--outline"></span> {{ _('Star Topic') }}</span>
-            <span class="starred--show"><span class="icon icon-star"></span> {{ _('Unstar Topic') }}</span>
-          </button>
-        </form></li>
-      {% endif %}
-        <li><a href="{{ url('wiki_help', anchor='contact') }}">
+        {% if handler.user.hasPriv(PRIV.PRIV_USER_PROFILE) %}
+        <li>
+          <form class="form--inline" method="post">
+            <input type="hidden" name="operation" value="{% if not dsdoc['star'] %}star{% else %}unstar{% endif %}">
+            <input type="hidden" name="csrfToken" value="{{ handler.csrfToken }}">
+            <button class="star{% if dsdoc['star'] %} activated{% endif %}" type="submit">
+              <span class="starred--hide"><span class="icon icon-star--outline"></span> {{ _('Star Topic') }}</span>
+              <span class="starred--show"><span class="icon icon-star"></span> {{ _('Unstar Topic') }}</span>
+            </button>
+          </form>
+        </li>
+        {% endif %}
+        <!-- <li><a href="{{ url('wiki_help', anchor='contact') }}">
           <span class="icon icon-warning"></span> {{ _('Report') }}
-        </a></li>
+        </a></li> -->
       </ul>
     </div>
     <div class="section">
@@ -57,32 +63,34 @@
       </div>
       <div class="section__body">
         {{ comments.render(
-          view = 'discussion',
-          docs = drdocs,
-          udict = udict,
-          comment_ref = 'drid',
-          reply_ref = 'drrid',
-          comment_post_op = 'reply',
-          reply_post_op = 'tail_reply',
-          comment_edit_op = 'edit_reply',
-          comment_delete_op = 'delete_reply',
-          reply_edit_op = 'edit_tail_reply',
-          reply_delete_op = 'delete_tail_reply',
-          comment_post_perm = perm.PERM_REPLY_DISCUSSION,
-          comment_edit_perm = perm.PERM_NEVER,
-          comment_delete_perm = perm.PERM_DELETE_DISCUSSION_REPLY_SELF_DISCUSSION if handler.user.own(ddoc) else perm.PERM_DELETE_DISCUSSION_REPLY,
-          comment_edit_self_perm = perm.PERM_EDIT_DISCUSSION_REPLY_SELF,
-          comment_delete_self_perm = perm.PERM_DELETE_DISCUSSION_REPLY_SELF,
-          reply_post_perm = perm.PERM_REPLY_DISCUSSION,
-          reply_edit_perm = perm.PERM_NEVER,
-          reply_delete_perm = perm.PERM_DELETE_DISCUSSION_REPLY_SELF_DISCUSSION if handler.user.own(ddoc) else perm.PERM_DELETE_DISCUSSION_REPLY,
-          reply_edit_self_perm = perm.PERM_EDIT_DISCUSSION_REPLY_SELF,
-          reply_delete_self_perm = perm.PERM_DELETE_DISCUSSION_REPLY_SELF
+        view = 'discussion',
+        docs = drdocs,
+        udict = udict,
+        comment_ref = 'drid',
+        reply_ref = 'drrid',
+        comment_post_op = 'reply',
+        reply_post_op = 'tail_reply',
+        comment_edit_op = 'edit_reply',
+        comment_delete_op = 'delete_reply',
+        reply_edit_op = 'edit_tail_reply',
+        reply_delete_op = 'delete_tail_reply',
+        comment_post_perm = perm.PERM_REPLY_DISCUSSION,
+        comment_edit_perm = perm.PERM_NEVER,
+        comment_delete_perm = perm.PERM_DELETE_DISCUSSION_REPLY_SELF_DISCUSSION if handler.user.own(ddoc) else
+        perm.PERM_DELETE_DISCUSSION_REPLY,
+        comment_edit_self_perm = perm.PERM_EDIT_DISCUSSION_REPLY_SELF,
+        comment_delete_self_perm = perm.PERM_DELETE_DISCUSSION_REPLY_SELF,
+        reply_post_perm = perm.PERM_REPLY_DISCUSSION,
+        reply_edit_perm = perm.PERM_NEVER,
+        reply_delete_perm = perm.PERM_DELETE_DISCUSSION_REPLY_SELF_DISCUSSION if handler.user.own(ddoc) else
+        perm.PERM_DELETE_DISCUSSION_REPLY,
+        reply_edit_self_perm = perm.PERM_EDIT_DISCUSSION_REPLY_SELF,
+        reply_delete_self_perm = perm.PERM_DELETE_DISCUSSION_REPLY_SELF
         ) }}
         {{ paginator.render(page, pcount) }}
-      {% if drcount == 0 %}
+        {% if drcount == 0 %}
         {{ nothing.render('No comments so far...') }}
-      {% endif %}
+        {% endif %}
       </div>
     </div>
   </div>
@@ -120,9 +128,9 @@
       </div>
     </div>
     {% if vnode.type == model.document.TYPE_PROBLEM %}
-      {% set pdoc = vnode %}
-      {% set owner_udoc = udict[vnode.owner] %}
-      {% include "partials/problem_sidebar.html" %}
+    {% set pdoc = vnode %}
+    {% set owner_udoc = udict[vnode.owner] %}
+    {% include "partials/problem_sidebar.html" %}
     {% endif %}
   </div>
 </div>

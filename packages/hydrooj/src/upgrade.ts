@@ -39,7 +39,7 @@ const scripts: UpgradeScript[] = [
     // Init
     async function _1_2() {
         const ddoc = await domain.get('system');
-        if (!ddoc) await domain.add('system', 1, 'Hydro', 'Welcome to Hydro!');
+        if (!ddoc) await domain.add('system', 1, 'Hydro', 'Welcome to LHPOJ!');
         // TODO discussion node?
         return true;
     },
