@@ -55,10 +55,10 @@ export const Setting = (
         type = 'textarea';
         subType = 'yaml';
     }
-    if (name == 'preferredEditorType') name = 'default_editor_type', family = 'code_editor';
-    if (name == 'monacoTheme') name = 'default_theme', family = 'code_editor';
-    if (name == 'showInvisibleChar') name = 'show_invisible_char', family = 'other_settings';
-    if (name == 'formatCode') name = 'format_code', family = 'other_settings';
+    if (name === 'preferredEditorType') name = 'default_editor_type', family = 'code_editor';
+    if (name === 'monacoTheme') name = 'default_theme', family = 'code_editor';
+    if (name === 'showInvisibleChar') name = 'show_invisible_char', family = 'other_settings';
+    if (name === 'formatCode') name = 'format_code', family = 'other_settings';
     return {
         family,
         key,
