@@ -52,4 +52,4 @@ __*
 !.gitkeep
 *.local
 *._*
-.DS_Store
+*.DS_Store
